@@ -1,56 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import StatementSection from './components/StatementSection';
 import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
-import CertificationsSection from './components/CertificationsSection';
 import SkillsSection from './components/SkillsSection';
-import GallerySection from './components/GallerySection';
+import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import NavigationDrawer from './components/NavigationDrawer';
 import TerminalModal from './components/TerminalModal';
-import { toggleSound, isSoundEnabled } from './utils/audio';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [soundOn, setSoundOn] = useState(true);
+  // Initialize dark mode from localStorage or default true
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('ankit_portfolio_theme');
+      if (saved) return saved === 'dark';
+    }
+    return true;
+  });
+
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openTerminal, setOpenTerminal] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
 
-  // Sync dark mode class
+  // Sync dark/light class on html element
   useEffect(() => {
+    const root = document.documentElement;
     if (darkMode) {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
+      root.classList.add('dark');
+      root.classList.remove('light');
+      localStorage.setItem('ankit_portfolio_theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
+      root.classList.remove('dark');
+      root.classList.add('light');
+      localStorage.setItem('ankit_portfolio_theme', 'light');
     }
   }, [darkMode]);
 
-  // Sync sound setting
-  const handleToggleSound = () => {
-    const nextState = toggleSound();
-    setSoundOn(nextState);
-  };
-
-  // Mouse spotlight tracker
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Shortcut key: press ` (backtick) or ~ to toggle terminal
+  // Keyboard shortcut: `~` or ` to open terminal
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === '`' && !e.ctrlKey && !e.metaKey) {
-        // Only toggle if not currently in an input
         if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
         setOpenTerminal((prev) => !prev);
       }
@@ -60,51 +50,44 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#090d16] text-slate-100 relative selection:bg-[#ff5e14] selection:text-white">
+    <div className="min-h-screen text-[var(--text-primary)] transition-colors duration-200 relative selection:bg-[#ff5e14] selection:text-white">
       
-      {/* Dynamic Cursor Spotlight Follower */}
-      <div 
-        className="pointer-events-none fixed -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#ff5e14]/5 via-cyan-500/5 to-transparent blur-3xl z-40 transition-transform duration-100 ease-out hidden sm:block"
-        style={{
-          left: `${mousePos.x}px`,
-          top: `${mousePos.y}px`
-        }}
-      />
+      {/* Subtle Ambient Background Lighting */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-orange-500/5 dark:bg-orange-500/10 rounded-full blur-[140px]" />
+        <div className="absolute top-1/3 -right-32 w-[500px] h-[500px] bg-blue-500/5 dark:bg-blue-500/5 rounded-full blur-[140px]" />
+      </div>
 
-      {/* Floating Navbar */}
+      {/* Modern Executive Navbar */}
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        soundOn={soundOn}
-        setSoundOn={handleToggleSound}
         openDrawer={openDrawer}
         setOpenDrawer={setOpenDrawer}
         openTerminal={openTerminal}
         setOpenTerminal={setOpenTerminal}
       />
 
-      {/* Main Page Content */}
+      {/* Main Streamlined Content */}
       <main className="relative z-10">
         <Hero onOpenTerminal={() => setOpenTerminal(true)} />
-        <StatementSection />
         <AboutSection />
         <ProjectsSection />
-        <CertificationsSection />
         <SkillsSection />
-        <GallerySection />
+        <CertificationsSection />
         <ContactSection />
       </main>
 
       {/* Footer */}
       <Footer onOpenTerminal={() => setOpenTerminal(true)} />
 
-      {/* Fullscreen Bento Navigation Drawer */}
+      {/* Fullscreen Navigation Drawer */}
       <NavigationDrawer
         isOpen={openDrawer}
         onClose={() => setOpenDrawer(false)}
       />
 
-      {/* Interactive Recruiter CLI Simulator */}
+      {/* Interactive Recruiter CLI Modal */}
       <TerminalModal
         isOpen={openTerminal}
         onClose={() => setOpenTerminal(false)}
