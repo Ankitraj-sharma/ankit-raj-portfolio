@@ -38,33 +38,33 @@ export default function Navbar({
         {/* Brand Logo */}
         <a 
           href="#home" 
-          className="flex items-center gap-2.5 px-3 py-1.5 rounded-2xl theme-nav hover:border-[#ff5e14]/50 transition-all group"
+          className="flex items-center gap-2.5 px-3 py-1.5 rounded-2xl bg-white/80 dark:bg-[#111827]/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-[#ff5e14]/50 transition-all group shadow-sm"
         >
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#ff5e14] to-amber-600 flex items-center justify-center text-white font-black text-sm shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
             <span>AR</span>
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-sm tracking-wider uppercase text-[var(--text-primary)] group-hover:text-[#ff5e14] transition-colors">
+            <span className="font-display font-bold text-sm tracking-wider uppercase text-slate-900 dark:text-white group-hover:text-[#ff5e14] transition-colors">
               {personal.shortName}
             </span>
-            <span className="text-[10px] tracking-widest text-[var(--text-muted)] font-mono -mt-0.5">
-              FULLSTACK
+            <span className="text-[10px] tracking-widest text-slate-500 dark:text-slate-400 font-mono -mt-0.5">
+              FULLSTACK · DATA
             </span>
           </div>
         </a>
 
-        {/* Center Navigation Links (Clean & Professional) */}
-        <nav className="hidden md:flex items-center gap-1 px-4 py-1.5 rounded-full theme-nav">
+        {/* Center Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1 px-4 py-1.5 rounded-full bg-white/80 dark:bg-[#111827]/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-sm">
           {navLinks.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-500/10 transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               {item.label}
             </a>
           ))}
-          <div className="h-4 w-px bg-slate-400/20 mx-1" />
+          <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 mx-1" />
           <button
             onClick={() => setOpenTerminal(true)}
             className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all"
@@ -84,7 +84,7 @@ export default function Navbar({
               href={personal.social.github}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-xl theme-nav text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[#ff5e14]/40 transition-all"
+              className="p-2 rounded-xl bg-white/80 dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-[#ff5e14]/40 transition-all shadow-sm"
               title="GitHub Profile"
             >
               <GithubIcon className="w-4 h-4" />
@@ -93,7 +93,7 @@ export default function Navbar({
               href={personal.social.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-xl theme-nav text-[var(--text-secondary)] hover:text-[#0077b5] hover:border-[#ff5e14]/40 transition-all"
+              className="p-2 rounded-xl bg-white/80 dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-[#0077b5] hover:border-[#ff5e14]/40 transition-all shadow-sm"
               title="LinkedIn Profile"
             >
               <LinkedinIcon className="w-4 h-4" />
@@ -103,7 +103,7 @@ export default function Navbar({
           {/* Dark / Light Mode Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2.5 rounded-xl theme-nav text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[#ff5e14]/50 transition-all"
+            className="p-2.5 rounded-xl bg-white/80 dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-[#ff5e14]/50 transition-all shadow-sm"
             title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
           >
             {darkMode ? (
@@ -125,7 +125,7 @@ export default function Navbar({
           {/* Bento Menu Toggle */}
           <button
             onClick={() => setOpenDrawer(true)}
-            className="p-2.5 rounded-xl theme-nav text-[var(--text-primary)] hover:border-[#ff5e14] transition-all"
+            className="p-2.5 rounded-xl bg-white/80 dark:bg-[#111827]/80 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white hover:border-[#ff5e14] transition-all shadow-sm"
             title="Open Directory Menu"
           >
             <div className="w-4 h-4 grid grid-cols-3 gap-0.5">

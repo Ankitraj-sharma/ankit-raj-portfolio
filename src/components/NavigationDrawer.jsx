@@ -10,7 +10,7 @@ export default function NavigationDrawer({ isOpen, onClose }) {
     { label: "HOME", href: "#home" },
     { label: "ABOUT & EXPERIENCE", href: "#about" },
     { label: "FEATURED WORKS", href: "#projects" },
-    { label: "TECH CAPABILITIES", href: "#skills" },
+    { label: "SKILLS & DATA SCIENCE", href: "#skills" },
     { label: "CERTIFICATIONS", href: "#certifications" },
     { label: "GET IN TOUCH", href: "#contact" }
   ];
@@ -27,29 +27,29 @@ export default function NavigationDrawer({ isOpen, onClose }) {
     <div className="fixed inset-0 z-50 flex items-stretch">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Main Drawer Container */}
-      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row bg-[var(--bg-surface)] text-[var(--text-primary)] overflow-y-auto">
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-white overflow-y-auto">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 w-11 h-11 rounded-full theme-surface flex items-center justify-center text-[var(--text-primary)] hover:text-[#ff5e14] transition-all"
+          className="absolute top-6 right-6 z-20 w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-[#ff5e14] transition-all"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Left Half: Menu Navigation */}
-        <div className="flex-1 p-8 sm:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-white/10">
+        <div className="flex-1 p-8 sm:p-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800">
           
           <div className="flex items-center gap-3 mb-8">
             <div className="w-8 h-8 rounded-lg bg-[#ff5e14] flex items-center justify-center text-white font-black text-sm">
               AR
             </div>
-            <span className="font-mono text-xs tracking-widest text-[var(--text-muted)] uppercase">
+            <span className="font-mono text-xs tracking-widest text-slate-500 dark:text-slate-400 uppercase">
               // DIRECTORY INDEX
             </span>
           </div>
@@ -59,18 +59,18 @@ export default function NavigationDrawer({ isOpen, onClose }) {
               <div
                 key={idx}
                 onClick={() => handleNavClick(item.href)}
-                className="group flex items-center justify-between py-3.5 border-b border-slate-200 dark:border-white/5 cursor-pointer hover:border-[#ff5e14]/50 transition-colors"
+                className="group flex items-center justify-between py-3.5 border-b border-slate-200 dark:border-slate-800 cursor-pointer hover:border-[#ff5e14]/50 transition-colors"
               >
                 <div className="flex items-baseline gap-4">
-                  <span className="font-mono text-xs text-[var(--text-muted)] group-hover:text-[#ff5e14] transition-colors">
+                  <span className="font-mono text-xs text-slate-400 dark:text-slate-500 group-hover:text-[#ff5e14] transition-colors">
                     0{idx + 1}
                   </span>
-                  <span className="text-xl sm:text-3xl font-display font-extrabold uppercase tracking-tight text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] group-hover:translate-x-2 transition-all duration-300">
+                  <span className="text-xl sm:text-3xl font-display font-extrabold uppercase tracking-tight text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-2 transition-all duration-300">
                     {item.label}
                   </span>
                 </div>
 
-                <div className="w-7 h-7 rounded-full border border-slate-300 dark:border-white/10 flex items-center justify-center text-[var(--text-muted)] group-hover:text-white group-hover:bg-[#ff5e14] group-hover:border-[#ff5e14] transition-all">
+                <div className="w-7 h-7 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-[#ff5e14] group-hover:border-[#ff5e14] transition-all">
                   <ChevronRight className="w-4 h-4" />
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function NavigationDrawer({ isOpen, onClose }) {
         </div>
 
         {/* Right Half: Quick Contact Information */}
-        <div className="w-full lg:w-[420px] p-8 sm:p-16 flex flex-col justify-between bg-slate-50 dark:bg-black/40">
+        <div className="w-full lg:w-[420px] p-8 sm:p-16 flex flex-col justify-between bg-slate-50 dark:bg-[#111827]">
           
           <div>
             <span className="text-xs font-mono tracking-widest text-[#ff5e14] uppercase mb-4 block font-semibold">
@@ -92,8 +92,8 @@ export default function NavigationDrawer({ isOpen, onClose }) {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#ff5e14] mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="text-xs font-mono text-[var(--text-muted)] block uppercase">Location</span>
-                  <p className="text-sm font-semibold text-[var(--text-primary)] mt-0.5">
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block uppercase">Location</span>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white mt-0.5">
                     {personal.location}
                   </p>
                 </div>
@@ -102,10 +102,10 @@ export default function NavigationDrawer({ isOpen, onClose }) {
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#ff5e14] mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="text-xs font-mono text-[var(--text-muted)] block uppercase">Official Email</span>
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block uppercase">Official Email</span>
                   <a
                     href={`mailto:${personal.email}`}
-                    className="text-sm font-semibold text-[var(--text-primary)] hover:text-[#ff5e14] transition-colors mt-0.5 block"
+                    className="text-sm font-semibold text-slate-900 dark:text-white hover:text-[#ff5e14] transition-colors mt-0.5 block"
                   >
                     {personal.email}
                   </a>
@@ -115,12 +115,12 @@ export default function NavigationDrawer({ isOpen, onClose }) {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#ff5e14] mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="text-xs font-mono text-[var(--text-muted)] block uppercase">Phone & WhatsApp</span>
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block uppercase">Phone & WhatsApp</span>
                   <a
                     href={personal.social.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-semibold text-[var(--text-primary)] hover:text-emerald-500 transition-colors mt-0.5 block font-mono"
+                    className="text-sm font-semibold text-slate-900 dark:text-white hover:text-emerald-500 transition-colors mt-0.5 block font-mono"
                   >
                     {personal.phone}
                   </a>
@@ -143,16 +143,16 @@ export default function NavigationDrawer({ isOpen, onClose }) {
 
           </div>
 
-          <div className="pt-8 border-t border-slate-200 dark:border-white/10 mt-8">
-            <span className="text-[11px] font-mono uppercase text-[var(--text-muted)] block mb-3">
+          <div className="pt-8 border-t border-slate-200 dark:border-slate-800 mt-8">
+            <span className="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400 block mb-3">
               Direct Profiles
             </span>
-            <div className="flex flex-wrap gap-4 text-xs font-mono text-[var(--text-secondary)]">
+            <div className="flex flex-wrap gap-4 text-xs font-mono text-slate-600 dark:text-slate-300">
               <a
                 href={personal.social.github}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[var(--text-primary)] flex items-center gap-1"
+                className="hover:text-slate-900 dark:hover:text-white flex items-center gap-1"
               >
                 GITHUB &rarr;
               </a>

@@ -11,7 +11,6 @@ import NavigationDrawer from './components/NavigationDrawer';
 import TerminalModal from './components/TerminalModal';
 
 export default function App() {
-  // Initialize dark mode from localStorage or default true
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('ankit_portfolio_theme');
@@ -23,7 +22,7 @@ export default function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openTerminal, setOpenTerminal] = useState(false);
 
-  // Sync dark/light class on html element
+  // Sync dark class on html element
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -50,7 +49,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen text-[var(--text-primary)] transition-colors duration-200 relative selection:bg-[#ff5e14] selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0B0F19] text-slate-900 dark:text-slate-100 transition-colors duration-200 relative selection:bg-[#ff5e14] selection:text-white">
       
       {/* Subtle Ambient Background Lighting */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">

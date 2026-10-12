@@ -38,11 +38,11 @@ export default function ContactSection() {
         <span className="text-xs font-mono tracking-widest text-[#ff5e14] uppercase mb-2">
           // 05 · DIRECT OUTREACH
         </span>
-        <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-[var(--text-primary)]">
+        <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-slate-900 dark:text-white">
           GET IN <span className="text-[#ff5e14]">TOUCH</span>
         </h2>
-        <p className="text-xs sm:text-sm text-[var(--text-secondary)] max-w-xl mt-2 font-mono">
-          Available for software engineering roles, technical opportunities, or collaborative projects.
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl mt-2 font-mono">
+          Available for full-time software engineering roles, Data Science internships, or project collaborations.
         </p>
         <div className="w-16 h-1 bg-[#ff5e14] rounded-full mt-3" />
       </div>
@@ -57,7 +57,7 @@ export default function ContactSection() {
             href={personal.social.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="p-6 rounded-3xl theme-card hover:border-emerald-500/60 transition-all group flex items-start justify-between"
+            className="p-6 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500/60 transition-all group flex items-start justify-between"
           >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform flex-shrink-0">
@@ -67,10 +67,10 @@ export default function ContactSection() {
                 <span className="text-[11px] font-mono uppercase text-emerald-600 dark:text-emerald-400 font-semibold tracking-wider">
                   Direct Messaging
                 </span>
-                <h4 className="text-base sm:text-lg font-bold text-[var(--text-primary)] mt-0.5">
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
                   Chat on WhatsApp
                 </h4>
-                <p className="text-xs text-[var(--text-secondary)] font-mono mt-0.5">
+                <p className="text-xs text-slate-600 dark:text-slate-300 font-mono mt-0.5">
                   {personal.phone}
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default function ContactSection() {
           </a>
 
           {/* Card 2: Email */}
-          <div className="p-6 rounded-3xl theme-card hover:border-[#ff5e14]/60 transition-all group flex items-start justify-between">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-[#ff5e14]/60 transition-all group flex items-start justify-between">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-[#ff5e14] group-hover:scale-105 transition-transform flex-shrink-0">
                 <Mail className="w-6 h-6" />
@@ -88,12 +88,12 @@ export default function ContactSection() {
                 <span className="text-[11px] font-mono uppercase text-orange-600 dark:text-orange-400 font-semibold tracking-wider">
                   Official Email
                 </span>
-                <h4 className="text-sm sm:text-base font-bold text-[var(--text-primary)] mt-0.5 break-all">
+                <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mt-0.5 break-all">
                   {personal.email}
                 </h4>
                 <a
                   href={`mailto:${personal.email}`}
-                  className="text-xs text-[var(--text-secondary)] hover:text-[#ff5e14] transition-colors mt-1 inline-block"
+                  className="text-xs text-slate-600 dark:text-slate-300 hover:text-[#ff5e14] transition-colors mt-1 inline-block"
                 >
                   Compose email &rarr;
                 </a>
@@ -102,7 +102,7 @@ export default function ContactSection() {
 
             <button
               onClick={handleCopyEmail}
-              className="p-2.5 rounded-xl theme-surface hover:border-[#ff5e14] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all"
+              className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-[#ff5e14] text-slate-600 dark:text-slate-300 transition-all"
               title="Copy Email Address"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
@@ -110,32 +110,32 @@ export default function ContactSection() {
           </div>
 
           {/* Card 3: Location */}
-          <div className="p-6 rounded-3xl theme-card flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-slate-500/10 flex items-center justify-center text-[#ff5e14] flex-shrink-0">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#ff5e14] flex-shrink-0">
               <MapPin className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[11px] font-mono uppercase text-[var(--text-muted)] tracking-wider">
+              <span className="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400 tracking-wider">
                 Current Location
               </span>
-              <h4 className="text-sm sm:text-base font-bold text-[var(--text-primary)] mt-0.5">
+              <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mt-0.5">
                 Rajkot, Gujarat, India (360003)
               </h4>
-              <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
                 Marwadi University Campus · Open to Relocation & Remote Roles
               </p>
             </div>
           </div>
 
           {/* Social Profiles Row */}
-          <div className="p-4 rounded-3xl theme-surface flex items-center justify-between">
-            <span className="text-xs font-mono text-[var(--text-muted)] uppercase">Connect Online:</span>
+          <div className="p-4 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between">
+            <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase">Connect Online:</span>
             <div className="flex items-center gap-2">
               <a
                 href={personal.social.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl theme-surface hover:text-[#ff5e14] transition-colors"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-[#ff5e14] transition-colors"
                 title="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
@@ -144,7 +144,7 @@ export default function ContactSection() {
                 href={personal.social.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl theme-surface hover:text-[#0077b5] transition-colors"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-[#0077b5] transition-colors"
                 title="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4" />
@@ -153,7 +153,7 @@ export default function ContactSection() {
                 href={personal.social.leetcode}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl theme-surface hover:text-[#ffa116] transition-colors"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-[#ffa116] transition-colors"
                 title="LeetCode"
               >
                 <LeetcodeIcon className="w-4 h-4" />
@@ -163,23 +163,23 @@ export default function ContactSection() {
 
         </div>
 
-        {/* Right Column: Clean Form */}
+        {/* Right Column: Direct Message Form */}
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="p-8 sm:p-10 rounded-3xl theme-card flex flex-col justify-between h-full"
+            className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-full"
           >
             <div>
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-[var(--text-primary)] mb-1">
-                Send a Message
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white mb-1">
+                Send a Direct Message
               </h3>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-6 font-mono">
-                Provide your details below to directly initiate conversation.
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6 font-mono">
+                Initiate a direct conversation with Ankit.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="block text-xs font-mono uppercase text-[var(--text-secondary)] mb-2 font-medium">
+                  <label className="block text-xs font-mono uppercase text-slate-700 dark:text-slate-300 mb-2 font-medium">
                     Your Name *
                   </label>
                   <input
@@ -188,12 +188,12 @@ export default function ContactSection() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="e.g. Rahul Sharma / Recruiter"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-[var(--text-primary)] placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-[var(--text-secondary)] mb-2 font-medium">
+                  <label className="block text-xs font-mono uppercase text-slate-700 dark:text-slate-300 mb-2 font-medium">
                     Your Email *
                   </label>
                   <input
@@ -202,13 +202,13 @@ export default function ContactSection() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="name@company.com"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-[var(--text-primary)] placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
                   />
                 </div>
               </div>
 
               <div className="mb-4">
-                <label className="block text-xs font-mono uppercase text-[var(--text-secondary)] mb-2 font-medium">
+                <label className="block text-xs font-mono uppercase text-slate-700 dark:text-slate-300 mb-2 font-medium">
                   Subject / Opportunity *
                 </label>
                 <input
@@ -216,13 +216,13 @@ export default function ContactSection() {
                   required
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  placeholder="e.g. Software Engineer Role / Project"
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-[var(--text-primary)] placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
+                  placeholder="e.g. Software Engineer / Data Scientist Opening"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors"
                 />
               </div>
 
               <div className="mb-6">
-                <label className="block text-xs font-mono uppercase text-[var(--text-secondary)] mb-2 font-medium">
+                <label className="block text-xs font-mono uppercase text-slate-700 dark:text-slate-300 mb-2 font-medium">
                   Message Details *
                 </label>
                 <textarea
@@ -230,8 +230,8 @@ export default function ContactSection() {
                   required
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Share details about the role, technical scope, or timeline..."
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-[var(--text-primary)] placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors resize-none"
+                  placeholder="Share details regarding the role, technical scope, or project..."
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#ff5e14] transition-colors resize-none"
                 />
               </div>
             </div>
