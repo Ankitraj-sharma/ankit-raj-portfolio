@@ -36,11 +36,12 @@ export default function TerminalModal({ isOpen, onClose }) {
           type: 'output',
           text: `Available Commands:
   • bio        : Overview & background of Ankit
-  • skills     : Technical stack & proficiencies
-  • projects   : Featured live deployed apps
-  • certs      : 10+ industry certifications
+  • skills     : Technical stack (Data Science, ML, Supabase, Web)
+  • projects   : Featured live deployed apps & Sentinel ML
+  • opensource : Upstream PRs to Odoo, Apache Camel K & GraphRAG
+  • certs      : 10+ industry certifications (Cisco, Infosys, Coursera)
   • contact    : Email, phone, WhatsApp & location
-  • hire       : Schedule an interview / download CV
+  • hire       : Schedule an interview / send email
   • clear      : Clear terminal screen
   • exit       : Close this CLI session`
         });
@@ -60,11 +61,25 @@ Bio: ${personal.bio}`
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: `Frontend: React, Next.js, TypeScript, Tailwind, HTML5, CSS3, Bootstrap 5
-Backend : Node.js, Express, Java, C#, ASP.NET Core, Python, REST APIs
-AI / ML : AI Agents, Gemini API, Model Training, Python Data Science
-Databases: MongoDB, MySQL
-Tools   : Git, Linux, Vercel, Netlify, DevTools, Packet Tracer`
+          text: `Data Science: Python, NumPy, Pandas, Scikit-Learn, EDA, Statistical Modeling
+AI / ML     : Sentinel On-Device ML, Gemini 3.8 Flash, GraphRAG, Knowledge Graphs
+Databases   : Supabase (Postgres + RLS + Realtime), MongoDB, MySQL, Vector DBs
+Backend     : Node.js, Express, Python APIs, Odoo Framework, Apache Camel K, Java, C#
+Frontend    : React, Next.js, TypeScript, Tailwind CSS, Bootstrap 5
+Platforms   : Jupyter Notebooks, Google Colab, Kaggle, Linux, Git, Docker`
+        });
+        break;
+
+      case 'opensource':
+        newHistory.push({
+          type: 'output',
+          text: `Upstream Open Source & System Contributions:
+• Odoo (Core ERP)     : Fixed ModelsConverter.to_url TypeError (#292724)
+• Apache Camel K      : Fixed TestRunAndLogErrorMvn assertion on K8s (#6870)
+• Sentinel Android    : Co-Developer of On-Device ML Phishing Engine (Team PhishShield)
+• Microsoft GraphRAG  : Hierarchical graph summarization & multi-hop RAG
+• Playwright Python   : E2E browser automation & asynchronous QA pipelines
+• HackerRank MU       : Operations Coordinator & DSA mentorship`
         });
         break;
 
@@ -183,7 +198,7 @@ LinkedIn: ${personal.social.linkedin}`
         {/* Quick Helper Command Buttons */}
         <div className="px-5 py-2 bg-slate-950/80 border-t border-white/5 flex flex-wrap gap-2 text-[11px] font-mono">
           <span className="text-slate-500 self-center">Run:</span>
-          {['bio', 'skills', 'projects', 'certs', 'contact', 'hire', 'clear'].map((cmd) => (
+          {['bio', 'skills', 'projects', 'opensource', 'certs', 'contact', 'hire', 'clear'].map((cmd) => (
             <button
               key={cmd}
               onClick={() => executeCommand(cmd)}

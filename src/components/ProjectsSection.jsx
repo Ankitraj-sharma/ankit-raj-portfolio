@@ -151,52 +151,57 @@ export default function ProjectsSection() {
 
       {/* DEDICATED OPEN SOURCE CONTRIBUTIONS SECTION */}
       <div className="mt-20">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 rounded-xl bg-orange-500/10 text-[#ff5e14]">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="p-2.5 rounded-2xl bg-orange-500/10 text-[#ff5e14]">
             <GitPullRequest className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-xl font-display font-bold text-slate-900 dark:text-white">
-              Open Source Contributions & Ecosystem Work
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">
+              Open Source Contributions & Upstream Ecosystem
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-              Practical community engagements, upstream forks, and open-source tooling.
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-mono mt-0.5">
+              Upstream bugfixes, core pull requests, collaborative systems, and developer mentorship.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {openSourceContributions.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-[#ff5e14]/50 transition-all"
+              className="p-6 rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-md flex flex-col justify-between hover:border-[#ff5e14]/60 transition-all group hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 font-bold">
-                    {item.type}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-bold border border-orange-500/20">
+                    {item.badge || item.type}
                   </span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono font-medium">
                     {item.role}
                   </span>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white mt-1">
+                <h4 className="text-base font-display font-bold text-slate-900 dark:text-white group-hover:text-[#ff5e14] transition-colors mt-1">
                   {item.name}
                 </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
 
-              <a
-                href={item.repo}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-[#ff5e14] hover:text-[#ea580c] flex items-center gap-1 font-semibold"
-              >
-                <span>View Contribution</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              <div className="mt-5 pt-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                  {item.tag || item.type}
+                </span>
+                <a
+                  href={item.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-mono text-[#ff5e14] hover:text-[#ea580c] flex items-center gap-1 font-semibold"
+                >
+                  <span>View Code / PR</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           ))}
         </div>

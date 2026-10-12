@@ -20,7 +20,7 @@ export const portfolioData = {
       email: "mailto:Ankitrajsharma666@gmail.com",
       whatsapp: "https://wa.me/917903356870?text=Hi%20Ankit,%20I%20saw%20your%20portfolio!"
     },
-    bio: "Full-stack software developer and aspiring Data Scientist / AI Engineer (CGPA 7.91, Marwadi University NAAC A+). Completed Cisco Virtual Internship in Cybersecurity, shipped 7+ production deployed projects, and holds 10+ industry certifications from Cisco, Infosys Springboard, Coursera, and Udemy. Serves as Operations Coordinator of the HackerRank Official Team at Marwadi University.",
+    bio: "Full-stack software developer, open source contributor (Odoo, Apache Camel K), and aspiring Data Scientist / AI Engineer (CGPA 7.91, Marwadi University NAAC A+). Co-developer of Sentinel Android (Team PhishShield on-device ML cybersecurity). Shipped 8+ production projects, holds 10+ industry certifications from Cisco, Infosys Springboard, Coursera, and serves as Operations Coordinator for HackerRank MU.",
     vision: "Targeting high-impact Data Science and AI Engineering roles. Focused on bridging scalable production full-stack engineering with machine learning algorithms, statistical data analysis, and autonomous LLM pipelines.",
     statement: "I am dedicated to engineering dependable software, actionable data intelligence, and impactful digital experiences that deliver measurable real-world value."
   },
@@ -28,18 +28,37 @@ export const portfolioData = {
   stats: [
     { label: "B.Tech CGPA", value: "7.91", subtext: "Marwadi University (NAAC A+)" },
     { label: "Live Deployed Projects", value: "8+", subtext: "Full Stack, AI & Systems" },
-    { label: "Industry Certifications", value: "10+", subtext: "Cisco, Infosys, Coursera" },
+    { label: "Open Source Upstream", value: "Odoo & Apache", subtext: "Camel K & Odoo Core PRs" },
     { label: "GitHub Repositories", value: "25+", subtext: "Continuous Open Source" }
   ],
 
   heroBullets: [
     "Full-Stack Architect (React, Next.js, Node.js, Express, Supabase)",
     "Data Science & ML Path (Python, Pandas, NumPy, Scikit-Learn, EDA)",
-    "GenAI & RAG Engineer (Gemini 3.8 Flash, GraphRAG, Vector DBs)",
+    "Upstream Open Source Contributor (Odoo, Apache Camel K, GraphRAG)",
+    "Co-Developer — Sentinel Android (Team PhishShield ML Security)",
     "Operations Coordinator — HackerRank Official Team MU"
   ],
 
   projects: [
+    {
+      id: "sentinel-android",
+      title: "Sentinel Android — On-Device Scam & Phishing Detection",
+      category: "ML & Cybersecurity",
+      stack: ["Android", "Python", "Machine Learning", "Cybersecurity", "On-Device ML", "Thread-Safe Engine"],
+      year: "2026",
+      featured: true,
+      description: "Co-developed an on-device cyber scam and phishing detection system for Android mobile environments (Team PhishShield). Engineered thread-safe notification deduplication, heuristic threat classifiers, and banking brand protection with zero user data leaks.",
+      highlights: [
+        "Co-developed core threat detection engine with Team PhishShield for real-time mobile scam classification.",
+        "Engineered thread-safe NotificationDeduplicator eliminating race conditions during asynchronous message alerts.",
+        "Disambiguated task-earnings scam rule collisions and expanded brand coverage (SBI 'onlinesbi.com', Microsoft 'office.com').",
+        "Built end-to-end regression test suites ensuring zero false positives on legitimate financial notifications."
+      ],
+      github: "https://github.com/Ankitraj-sharma/sentinel-android",
+      live: "#",
+      badge: "Co-Created · Team PhishShield"
+    },
     {
       id: "ai-interview-assistant",
       title: "AI Interview Assistant & Evaluator",
@@ -73,23 +92,6 @@ export const portfolioData = {
       github: "https://github.com/Ankitraj-sharma/graphrag",
       live: "#",
       badge: "Knowledge Graph"
-    },
-    {
-      id: "sentinel-android",
-      title: "Sentinel Android — On-Device Phishing ML",
-      category: "ML & Cybersecurity",
-      stack: ["Android", "Python", "Machine Learning", "Cybersecurity", "On-Device ML"],
-      year: "2026",
-      featured: true,
-      description: "On-device cyber scam and phishing detection system for Android mobile environments, classifying fraudulent heuristics and suspicious URLs with zero user data leaks.",
-      highlights: [
-        "Trained lightweight machine learning classification models for low-latency offline threat detection on mobile.",
-        "Engineered behavioral URL feature extractor checking domain entropy, lexical patterns, and typosquatting.",
-        "Team PhishShield project recognized for user-privacy-first cybersecurity architecture."
-      ],
-      github: "https://github.com/Ankitraj-sharma/sentinel-android",
-      live: "#",
-      badge: "On-Device ML"
     },
     {
       id: "exam-system",
@@ -179,32 +181,58 @@ export const portfolioData = {
 
   openSourceContributions: [
     {
+      name: "Odoo (Open Source ERP Framework)",
+      type: "Core Python & Web",
+      role: "Upstream Contributor",
+      badge: "PR #292724",
+      desc: "Fixed critical route converter TypeError in Odoo Core ('ModelsConverter.to_url') converting integer record IDs to strings before joining URL routes across dynamic web endpoints.",
+      repo: "https://github.com/Ankitraj-sharma/odoo/tree/fix/models-converter-to-url-ids",
+      tag: "Python · Odoo Core"
+    },
+    {
+      name: "Apache Camel K (ASF)",
+      type: "Cloud Native & Kubernetes",
+      role: "Upstream Contributor",
+      badge: "PR #6870",
+      desc: "Contributed upstream fix to Apache Camel K integration test suite ('TestRunAndLogErrorMvn'), stabilizing Maven log error assertions across Kubernetes serverless runtimes.",
+      repo: "https://github.com/Ankitraj-sharma/camel-k/tree/fix/maven-log-error",
+      tag: "Go · Kubernetes"
+    },
+    {
+      name: "Sentinel Android (Team PhishShield)",
+      type: "Cybersecurity & Mobile ML",
+      role: "Co-Developer & Engine Lead",
+      badge: "On-Device Threat ML",
+      desc: "Co-developed on-device scam and phishing detection engine: authored thread-safe 'NotificationDeduplicator', banking brand protection, and disambiguated scam rule logic.",
+      repo: "https://github.com/Ankitraj-sharma/sentinel-android",
+      tag: "Android · Threat ML"
+    },
+    {
       name: "Microsoft GraphRAG",
       type: "AI & Graph Research",
       role: "Ecosystem Practitioner",
-      desc: "Working with knowledge graph indexing, hierarchical community clustering, and graph-augmented LLM generation.",
-      repo: "https://github.com/Ankitraj-sharma/graphrag"
+      badge: "Knowledge Graphs",
+      desc: "Working with knowledge graph indexing, hierarchical community clustering, and graph-augmented LLM generation pipelines.",
+      repo: "https://github.com/Ankitraj-sharma/graphrag",
+      tag: "Python · Graph RAG"
     },
     {
       name: "Playwright Python",
       type: "Testing & Automation",
       role: "Automation Contributor",
+      badge: "E2E Automation",
       desc: "End-to-end headless browser testing, web scraper scripts, and asynchronous QA validation pipelines.",
-      repo: "https://github.com/Ankitraj-sharma/playwright-python"
-    },
-    {
-      name: "Cloud Native & Microservices Ecosystem",
-      type: "DevOps & Cloud",
-      role: "Open Source Explorer",
-      desc: "Hands-on exploration with Docker CLI, Kubernetes Community Docs, Minikube, and Apache Camel K.",
-      repo: "https://github.com/Ankitraj-sharma"
+      repo: "https://github.com/Ankitraj-sharma/playwright-python",
+      tag: "Python · Playwright"
     },
     {
       name: "HackerRank Official Team MU",
       type: "Campus Community Lead",
       role: "Operations Coordinator",
-      desc: "Organizing coding contests, mentoring student developers in DSA and competitive programming, and leading tech festivals.",
-      repo: "https://www.hackerrank.com/profile/ankitrajsharma61"
+      badge: "Marwadi University",
+      desc: "Mentoring 500+ student developers in DSA and algorithms, authoring contest challenges, and coordinating university-wide tech events.",
+      repo: "https://www.hackerrank.com/profile/ankitrajsharma61",
+      tag: "DSA · Community"
     }
   ],
 
@@ -282,6 +310,18 @@ export const portfolioData = {
   ],
 
   achievements: [
+    {
+      role: "Co-Developer & Detection Lead",
+      organization: "Sentinel Android — Team PhishShield",
+      period: "2026",
+      desc: "Co-engineered on-device phishing and scam detection system for Android: built thread-safe NotificationDeduplicator, scam rules disambiguation, and regression testing."
+    },
+    {
+      role: "Open Source Upstream Contributor",
+      organization: "Odoo S.A. & Apache Software Foundation",
+      period: "2026",
+      desc: "Authored upstream bugfixes for Odoo core URL routing (ModelsConverter.to_url #292724) and Apache Camel K Kubernetes test suites (#6870)."
+    },
     {
       role: "Operations Coordinator",
       organization: "HackerRank Official Team — Marwadi University",
@@ -365,9 +405,11 @@ export const portfolioData = {
     ],
     backend: [
       { name: "Node.js & Express", level: "Advanced", icon: "server" },
+      { name: "Python APIs (FastAPI / Flask)", level: "Proficient", icon: "terminal" },
+      { name: "Odoo Framework (Python / ERP Core)", level: "Proficient", icon: "layers" },
+      { name: "Apache Camel K (Cloud Native)", level: "Proficient", icon: "cloud" },
       { name: "Java & JDBC", level: "Proficient", icon: "coffee" },
       { name: "C# & ASP.NET Core", level: "Proficient", icon: "cpu" },
-      { name: "Python APIs (FastAPI / Flask)", level: "Proficient", icon: "terminal" },
       { name: "REST API Integration & QA", level: "Expert", icon: "link" }
     ]
   },

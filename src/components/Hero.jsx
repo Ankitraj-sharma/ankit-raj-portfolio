@@ -8,9 +8,10 @@ export default function Hero({ onOpenTerminal }) {
   const roles = [
     "Full-Stack Web Architect",
     "Aspiring Data Scientist & ML Engineer",
+    "Upstream Open Source Contributor (Odoo & Apache)",
+    "Co-Developer — Sentinel Android (Team PhishShield)",
     "Autonomous AI Agent & RAG Developer",
-    "Cisco Cybersecurity Trained",
-    "HackerRank Operations Coordinator"
+    "Operations Coordinator — HackerRank MU"
   ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -86,7 +87,7 @@ export default function Hero({ onOpenTerminal }) {
 
             {/* Professional Summary */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">Ankit Raj Sharma</strong> — Full Stack Developer and aspiring <strong className="text-orange-600 dark:text-orange-400 font-semibold">Data Scientist & AI Engineer</strong> (B.Tech Computer Engineering, <strong className="text-slate-900 dark:text-white font-semibold">Marwadi University NAAC A+, CGPA 7.91</strong>). Experienced with <strong className="text-slate-900 dark:text-white font-semibold">React, Node.js, Supabase, Python, RAG pipelines</strong>, and Cisco Cybersecurity.
+              Hi, I'm <strong className="text-slate-900 dark:text-white font-semibold">Ankit Raj Sharma</strong> — Full Stack Developer, Open Source Contributor (<strong className="text-[#ff5e14] font-semibold">Odoo</strong> & <strong className="text-[#ff5e14] font-semibold">Apache Camel K</strong>), and aspiring <strong className="text-orange-600 dark:text-orange-400 font-semibold">Data Scientist & AI Engineer</strong> (B.Tech Computer Engineering, <strong className="text-slate-900 dark:text-white font-semibold">Marwadi University NAAC A+, CGPA 7.91</strong>). Co-developer of <strong className="text-slate-900 dark:text-white font-semibold">Sentinel Android</strong> (Team PhishShield ML cybersecurity) with expertise across <strong className="text-slate-900 dark:text-white font-semibold">React, Node.js, Supabase, Python & RAG architectures</strong>.
             </p>
 
             {/* Quick Metrics Strip - Perfectly Color Graded */}
